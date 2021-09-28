@@ -25,15 +25,16 @@
         <button type="submit" id='btn'>submit</button>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.4/axios.min.js" integrity="sha512-lTLt+W7MrmDfKam+r3D2LURu0F47a3QaW5nF0c6Hl0JDZ57ruei+ovbg7BrZ+0bjVJ5YgzsAWE+RreERbpPE1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.4/axios.min.js" integrity="sha512-lTLt+W7MrmDfKam+r3D2LURu0F47a3QaW5nF0c6Hl0JDZ57ruei+ovbg7BrZ+0bjVJ5YgzsAWE+RreERbpPE1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <script>
         const name = document.getElementById('name')
         const value = document.getElementById('value')
         const btn = document.getElementById('btn')
         btn.addEventListener('click', () => {
-            const url = 'https://zg69fktp35.execute-api.ap-south-1.amazonaws.com/dev/post'
+            const url = 'https://x214um8pl8.execute-api.ap-south-1.amazonaws.com/dev/get'
 
-            axios.post(url, {name: name.value, value: value.value}).then((r) => console.log(r)).catch(e => console.error(e))
+            // axios.get(url).then((r) => console.log(r)).catch(e => console.error(e))
+            fetch(url).then((r) => console.log(r)).catch(e => console.error(e))
         })
     </script>
 </body>

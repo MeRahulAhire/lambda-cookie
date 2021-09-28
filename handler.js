@@ -2,22 +2,19 @@
 const cookie = require("cookie");
 
 module.exports.hello = async (event) => {
-  const body = JSON.parse(event.body)
-  const name = body.name;
-  const value = body.value
+  const body = JSON.parse(event.body);
   return {
     statusCode: 200,
     headers: {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Credentials": true,
-      "Set-Cookie": cookie.serialize(name, value, {
-        maxAge: 10, path:'/'
+      "Set-Cookie": cookie.serialize('id', 'abcd-', {
         
       }),
     },
     body: JSON.stringify(
       {
-        input: event.body,
+        input: event
       },
       null,
       2
