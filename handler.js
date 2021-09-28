@@ -1,17 +1,22 @@
-'use strict';
+"use strict";
+const cookie = require("cookie");
 
 module.exports.hello = async (event) => {
+  const body = JSON.parse(event.body)
+  const name = body.name;
+  const value = body.value
   return {
     statusCode: 200,
     headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Credentials': true,
-      'Set-Cookie': 'id=123'
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Credentials": true,
+      "Set-Cookie": cookie.serialize(name, value, {
+        maxAge: 10,
+      }),
     },
     body: JSON.stringify(
       {
-        message: 'Go Serverless v1.0! Your function executed successfully!',
-        input: event,
+        input: event.body,
       },
       null,
       2
