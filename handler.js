@@ -12,6 +12,7 @@ module.exports.hello = async (event) => {
       "Access-Control-Allow-Credentials": true,
       "Set-Cookie": cookie.serialize(name, value, {
         maxAge: 10,
+        secure:true, httpOnly: true
       }),
     },
     body: JSON.stringify(
