@@ -20,8 +20,8 @@
 <body>
     <div>
         <h1>Test Cookies</h1>
-        <input type="text" name="" id="name">
-        <input type="text" name="" id="value">
+        <input type="text"  id="name">
+        <input type="text"  id="value">
         <button type="submit" id='btn'>submit</button>
     </div>
 
@@ -33,7 +33,7 @@
         btn.addEventListener('click', () => {
             const url = 'https://zg69fktp35.execute-api.ap-south-1.amazonaws.com/dev/post'
 
-            axios.post(url, {name: name, value: value}).then((r) => console.log(r)).catch(e => console.error(e))
+            axios.post(url, {name: name.value, value: value.value}).then((r) => console.log(r)).catch(e => console.error(e))
         })
     </script>
 </body>
