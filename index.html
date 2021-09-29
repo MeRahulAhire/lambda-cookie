@@ -25,18 +25,31 @@
         <button type="submit" id='btn'>submit</button>
     </div>
 
-    <script src="./axios.min.js"></script>
+    <!-- <script src="./axios.min.js"></script> -->
     <script>
         const name = document.getElementById('name')
         const value = document.getElementById('value')
         const btn = document.getElementById('btn')
         btn.addEventListener('click', () => {
             console.log(name.value, value.value)
-            const url = 'https://x214um8pl8.execute-api.ap-south-1.amazonaws.com/dev/get'
+            const url = 'https://x214um8pl8.execute-api.ap-south-1.amazonaws.com/dev/cookie'
 
-            axios.post(url, {name: name.value, value: value.value}).then((r) => console.log(r)).catch(e => console.error(e))
-            // fetch(url).then((r) => console.log(r)).catch(e => console.error(e))
-        })
+            // axios.post(url, {name: name.value, value: value.value}).then((r) => console.log(r)).catch(e => console.error(e))
+            const user = {
+                name: name.value, value:value.value
+            };
+            const options = {
+                method: 'POST',
+                body: JSON.stringify(user),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+
+            }
+            fetch(url, options)
+            .then(res => res.json())
+            .then(res => console.log(res));
+        )
     </script>
 </body>
 </html>

@@ -62,7 +62,7 @@ functions:
     handler: handler.hello
     events:
       - http:
-          path: /get
+          path: /cookie
           method: post
           cors: 
             origin : 'https://lambda-cookie.netlify.app'
