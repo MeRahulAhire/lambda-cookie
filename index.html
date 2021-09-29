@@ -23,17 +23,28 @@
         <input type="text"  id="name">
         <input type="text"  id="value">
         <button type="submit" id='post_btn'>post</button>
-        <button id="get_btn"></button>
+        <button id="get_btn">get</button>
     </div>
 
     <!-- <script src="./axios.min.js"></script> -->
     <script>
         const name = document.getElementById('name')
         const value = document.getElementById('value')
-        const btn = document.getElementById('btn')
+        const post_btn = document.getElementById('post_btn')
+        const get_btn = document.getElementById('get_btn')
+
+        get_btn.addEventListener('click', () => {
+            console.log(name.value, value.value)
+            const get_url = 'https://81pvmu59t9.execute-api.ap-south-1.amazonaws.com/dev/get'
+
+            fetch(`${get_url}?name=${name.value}&value=${value.value}`).then(r => console.log(r)).catch(e => console.error(e))
+        })
+
+
+
         post_btn.addEventListener('click', () => {
             console.log(name.value, value.value)
-            const url = 'https://81pvmu59t9.execute-api.ap-south-1.amazonaws.com/dev/post'
+            const post_url = 'https://81pvmu59t9.execute-api.ap-south-1.amazonaws.com/dev/post'
 
            
 
@@ -52,7 +63,7 @@
             }
 
             // send POST request
-            fetch(url, options)
+            fetch(post_url, options)
                 .then(res => res.json())
                 .then(res => console.log(res));
 

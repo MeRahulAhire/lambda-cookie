@@ -1,22 +1,22 @@
-"use strict";
-// const cookie = require("cookie");
 
-module.exports = async (event) => {
-  const body = JSON.parse(event.body);
-//   const name = body.name;
-//   const value = body.value;
+const cookie = require("cookie");
+
+exports.handler = async (event) => {
+  const body = event.queryStringParameters;
+  const name = body.name;
+  const value = body.value;
   return {
     statusCode: 200,
     headers: {
       "Access-Control-Allow-Origin": "https://lambda-cookie.netlify.app",
       "Access-Control-Allow-Credentials": true,
-    //   "Set-Cookie": cookie.serialize(name, value, {
-    //     maxAge: 10,
-    //   }),
+      "Set-Cookie": cookie.serialize(name, value, {
+        maxAge: 10,
+      }),
     },
     body: JSON.stringify(
       {
-        input: event,
+        input: name, value
       },
       null,
       2
