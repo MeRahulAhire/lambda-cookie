@@ -22,7 +22,8 @@
         <h1>Test Cookies</h1>
         <input type="text"  id="name">
         <input type="text"  id="value">
-        <button type="submit" id='btn'>submit</button>
+        <button type="submit" id='post_btn'>post</button>
+        <button id="get_btn"></button>
     </div>
 
     <!-- <script src="./axios.min.js"></script> -->
@@ -30,9 +31,9 @@
         const name = document.getElementById('name')
         const value = document.getElementById('value')
         const btn = document.getElementById('btn')
-        btn.addEventListener('click', () => {
+        post_btn.addEventListener('click', () => {
             console.log(name.value, value.value)
-            const url = 'https://81pvmu59t9.execute-api.ap-south-1.amazonaws.com/dev/cookie'
+            const url = 'https://81pvmu59t9.execute-api.ap-south-1.amazonaws.com/dev/post'
 
            
 
