@@ -8,10 +8,11 @@ module.exports.hello = async (event) => {
   return {
     statusCode: 200,
     headers: {
-      "Access-Control-Allow-Origin": "https://lambda-cookie.netlify.app",
+      "Access-Control-Allow-Origin": "https://api.rahulahire.in",
       "Access-Control-Allow-Credentials": true,
       "Set-Cookie": cookie.serialize(name, value, {
-        maxAge: 10,
+        expires: new Date(new Date().getTime() + 10 * 1000),
+        domain: 'https://api.rahulahire.in'
       }),
     },
     body: JSON.stringify(
