@@ -8,11 +8,11 @@ exports.handler = async (event) => {
   return {
     statusCode: 200,
     headers: {
-      "Access-Control-Allow-Origin": "https://api.rahulahire.in",
+      "Access-Control-Allow-Origin": "https://rahulahire.in",
       "Access-Control-Allow-Credentials": true,
       "Set-Cookie": cookie.serialize(name, value, {
         // expires: new Date(new Date().getTime() + 10 * 1000),
-        domain: 'https://api.rahulahire.in',
+        domain: 'https://rahulahire.in',
       }),
     },
     body: JSON.stringify(
