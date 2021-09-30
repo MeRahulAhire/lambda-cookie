@@ -37,7 +37,7 @@
             console.log(name.value, value.value)
             const get_url = 'https://api.rahulahire.in/get'
 
-            axios.get(`${get_url}?name=${name.value}&value=${value.value}`).then(r => console.log(r)).catch(e => console.error(e))
+            axios.get(`${get_url, { withCredentials: true }}?name=${name.value}&value=${value.value}`).then(r => console.log(r)).catch(e => console.error(e))
         })
 
 
@@ -63,7 +63,7 @@
             // }
 
             // send POST request
-            axios.post(post_url, user)
+            axios.post(post_url, user, { withCredentials: true })
                 .then(res => res.json())
                 .then(res => console.log(res));
 
