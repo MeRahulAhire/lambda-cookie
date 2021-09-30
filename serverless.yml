@@ -65,7 +65,7 @@ functions:
           path: /post
           method: post
           cors: 
-            origin : rahulahire.in
+            origin : https://rahulahire.in
   get:
     handler: get.handler
     events:
@@ -73,7 +73,7 @@ functions:
           path: /get
           method: get
           cors: 
-            origin : rahulahire.in      
+            origin : https://rahulahire.in      
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details

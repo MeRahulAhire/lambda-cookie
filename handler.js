@@ -12,7 +12,7 @@ module.exports.hello = async (event) => {
       "Access-Control-Allow-Credentials": true,
       "Set-Cookie": cookie.serialize(name, value, {
         expires: new Date(new Date().getTime() + 10 * 1000),
-        domain: 'https://rahulahire.in'
+        domain: 'https://api.rahulahire.in'
       }),
     },
     body: JSON.stringify(

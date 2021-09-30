@@ -26,7 +26,7 @@
         <button id="get_btn">get</button>
     </div>
 
-    <!-- <script src="./axios.min.js"></script> -->
+    <script src="./axios.min.js"></script>
     <script>
         const name = document.getElementById('name')
         const value = document.getElementById('value')
@@ -37,7 +37,7 @@
             console.log(name.value, value.value)
             const get_url = 'https://api.rahulahire.in/get'
 
-            fetch(`${get_url}?name=${name.value}&value=${value.value}`).then(r => console.log(r)).catch(e => console.error(e))
+            axios.get(`${get_url}?name=${name.value}&value=${value.value}`).then(r => console.log(r)).catch(e => console.error(e))
         })
 
 
@@ -54,16 +54,16 @@
             };
 
             // request options
-            const options = {
-                method: 'POST',
-                body: JSON.stringify(user),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            }
+            // const options = {
+            //     method: 'POST',
+            //     body: JSON.stringify(user),
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     }
+            // }
 
             // send POST request
-            fetch(post_url, options)
+            axios.post(post_url, user)
                 .then(res => res.json())
                 .then(res => console.log(res));
 

@@ -11,8 +11,8 @@ exports.handler = async (event) => {
       "Access-Control-Allow-Origin": "https://rahulahire.in",
       "Access-Control-Allow-Credentials": true,
       "Set-Cookie": cookie.serialize(name, value, {
-        // expires: new Date(new Date().getTime() + 10 * 1000),
-        domain: 'https://rahulahire.in',
+        expires: new Date(new Date().getTime() + 10 * 1000), httpOnly: true, secure: true
+        // domain: 'https://api.rahulahire.in'
       }),
     },
     body: JSON.stringify(
