@@ -35,7 +35,7 @@
 
         get_btn.addEventListener('click', () => {
             console.log(name.value, value.value)
-            const get_url = 'api.rahulahire.in/get'
+            const get_url = 'https://api.rahulahire.in/get'
 
             fetch(`${get_url}?name=${name.value}&value=${value.value}`).then(r => console.log(r)).catch(e => console.error(e))
         })
@@ -44,7 +44,7 @@
 
         post_btn.addEventListener('click', () => {
             console.log(name.value, value.value)
-            const post_url = 'api.rahulahire.in/post'
+            const post_url = 'htpps://api.rahulahire.in/post'
 
            
 
